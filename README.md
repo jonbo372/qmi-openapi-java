@@ -1,1 +1,1 @@
-# qmi-lib-java
+# qmi-openapi-java
