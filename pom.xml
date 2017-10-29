@@ -8,7 +8,22 @@
     <packaging>jar</packaging>
 
     <name>qmi-openapi</name>
-    <url>http://maven.apache.org</url>
+    <description>Qmi OpenAPI for Java</description>
+    <url>https://github.com/mitaketw/qmi-openapi-java</url>
+
+    <developers>
+        <developer>
+            <name>kewang</name>
+            <email>cpckewang@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:mitaketw/qmi-openapi-java.git</connection>
+        <developerConnection>scm:git:git@github.com:mitaketw/qmi-openapi-java.git</developerConnection>
+        <url>scm:git:git@github.com:mitaketw/qmi-openapi-java.git</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -47,4 +62,52 @@
             <version>3.5.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <preparationGoals>clean deploy</preparationGoals>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-repo-maven</id>
+            <name>kewang-maven</name>
+            <url>https://api.bintray.com/maven/mitake/maven/qmi-openapi/;publish=1</url>
+        </repository>
+    </distributionManagement>
 </project>
