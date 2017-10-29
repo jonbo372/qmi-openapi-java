@@ -1,6 +1,6 @@
 package tw.com.mitake.response;
 
-public class PostTimelineEventResponse extends AbstractResponse {
+public class PostTimelineEventResponse extends BaseResponse {
     private String eventId;
 
     public String getEventId() {
