@@ -37,9 +37,12 @@ public class QmiSender {
         BaseResponse res = null;
 
         try {
-            ResponseBody responseBody = CLIENT.newCall(req).execute().body();
+            Response response = CLIENT.newCall(req).execute();
+            String responseBody = response.body().string();
 
-            res = JsonUtils.fromJson(responseBody.string(), responseClass);
+            LOG.debug("ResponseBody: {}", responseBody);
+
+            res = JsonUtils.fromJson(responseBody, responseClass);
         } catch (IOException e) {
             LOG.error("Caught Exception: ", e);
         }

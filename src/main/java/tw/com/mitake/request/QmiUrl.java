@@ -3,7 +3,7 @@ package tw.com.mitake.request;
 public enum QmiUrl {
     POST_TIMELINE_EVENT(HttpMethod.POST, "events");
 
-    public static final String BASE_URL = "https://ap.qmi.emome.net/api/v2/open/%s";
+    public static final String BASE_URL = "https://ap.qmi.emome.net/v2/open/%s";
 
     private HttpMethod method;
     private String url;
