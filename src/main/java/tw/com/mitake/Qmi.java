@@ -3,7 +3,9 @@ package tw.com.mitake;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tw.com.mitake.request.GetTimelineEventsRequest;
 import tw.com.mitake.request.PostTimelineEventRequest;
+import tw.com.mitake.response.GetTimelineEventsResponse;
 import tw.com.mitake.response.PostTimelineEventResponse;
 
 public class Qmi {
@@ -54,5 +56,9 @@ public class Qmi {
 
     private PostTimelineEventResponse postToTimeline(PostTimelineEventRequest request) {
         return (PostTimelineEventResponse) sender.send(request, PostTimelineEventResponse.class);
+    }
+
+    public GetTimelineEventsResponse getEventsFromTimeline() {
+        return (GetTimelineEventsResponse) sender.send(new GetTimelineEventsRequest(), GetTimelineEventsResponse.class);
     }
 }
