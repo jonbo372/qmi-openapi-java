@@ -32,6 +32,12 @@ public class QmiSender {
                 LOG.debug("Request: {}", req.toString());
 
                 break;
+            case GET:
+                req = new Request.Builder().url(qmiUrl.getUrl() + "?token=" + Qmi.getToken()).get().build();
+
+                LOG.debug("Request: {}", req.toString());
+
+                break;
         }
 
         BaseResponse res = null;

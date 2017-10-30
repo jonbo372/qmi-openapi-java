@@ -17,7 +17,6 @@ public class QmiTest {
     public void testPostToTimeline() {
         PostTimelineEventResponse response = qmi.postToTimeline("Hello World from Qmi OpenAPI for Java library");
 
-        Assert.assertEquals("建立成功", response.getMessage());
         Assert.assertNotNull(response.getEventId());
     }
 }
