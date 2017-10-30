@@ -1,7 +1,8 @@
 package tw.com.mitake.constant;
 
 public enum QmiUrl {
-    POST_TIMELINE_EVENT(HttpMethod.POST, "events");
+    POST_TIMELINE_EVENT(HttpMethod.POST, "events"),
+    GET_TIMELINE_EVENTS(HttpMethod.GET, "events");
 
     public static final String BASE_URL = "https://ap.qmi.emome.net/v2/open/%s";
 
