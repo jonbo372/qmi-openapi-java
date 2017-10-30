@@ -3,8 +3,8 @@ package tw.com.mitake;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tw.com.mitake.constant.QmiUrl;
 import tw.com.mitake.request.BaseRequest;
-import tw.com.mitake.request.QmiUrl;
 import tw.com.mitake.response.BaseResponse;
 import tw.com.mitake.utils.JsonUtils;
 

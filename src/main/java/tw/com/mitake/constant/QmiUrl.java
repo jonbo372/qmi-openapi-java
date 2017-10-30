@@ -1,4 +1,4 @@
-package tw.com.mitake.request;
+package tw.com.mitake.constant;
 
 public enum QmiUrl {
     POST_TIMELINE_EVENT(HttpMethod.POST, "events");

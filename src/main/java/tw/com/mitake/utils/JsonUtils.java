@@ -10,7 +10,7 @@ public class JsonUtils {
         return GSON.fromJson(string, clazz);
     }
 
-    public static String toJson(Object object){
+    public static String toJson(Object object) {
         return GSON.toJson(object);
     }
 }
