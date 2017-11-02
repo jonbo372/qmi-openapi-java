@@ -3,8 +3,12 @@ package tw.com.mitake;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tw.com.mitake.request.PostChatroomEventRequest;
 import tw.com.mitake.request.PostTimelineEventRequest;
+import tw.com.mitake.response.PostChatroomEventResponse;
 import tw.com.mitake.response.PostTimelineEventResponse;
+
+import java.util.Arrays;
 
 public class Qmi {
     private static final Logger LOG = LoggerFactory.getLogger(Qmi.class);
@@ -54,5 +58,19 @@ public class Qmi {
 
     private PostTimelineEventResponse postToTimeline(PostTimelineEventRequest request) {
         return (PostTimelineEventResponse) sender.send(request, PostTimelineEventResponse.class);
+    }
+
+    public PostChatroomEventResponse postToChatroom(String message, String... users) {
+        PostChatroomEventRequest request = new PostChatroomEventRequest();
+
+        ((PostChatroomEventRequest.RequestData) request.getData()).getMessage().setContent(message);
+        ((PostChatroomEventRequest.RequestData) request.getData()).getMessage().setType("text");
+        ((PostChatroomEventRequest.RequestData) request.getData()).getUsers().addAll(Arrays.asList(users));
+
+        return postToChatroom(request);
+    }
+
+    private PostChatroomEventResponse postToChatroom(PostChatroomEventRequest request) {
+        return (PostChatroomEventResponse) sender.send(request, PostChatroomEventResponse.class);
     }
 }

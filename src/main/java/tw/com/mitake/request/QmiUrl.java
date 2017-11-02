@@ -1,7 +1,8 @@
 package tw.com.mitake.request;
 
 public enum QmiUrl {
-    POST_TIMELINE_EVENT(HttpMethod.POST, "events");
+    POST_TIMELINE_EVENT(HttpMethod.POST, "events"),
+    POST_CHATROOM_EVENT(HttpMethod.POST, "chats");
 
     public static final String BASE_URL = "https://ap.qmi.emome.net/v2/open/%s";
 
