@@ -1,6 +1,7 @@
 package tw.com.mitake.request;
 
 import com.google.gson.annotations.SerializedName;
+import tw.com.mitake.constant.QmiUrl;
 
 import java.util.ArrayList;
 import java.util.List;
