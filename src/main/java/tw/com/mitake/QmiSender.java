@@ -3,8 +3,8 @@ package tw.com.mitake;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tw.com.mitake.constant.QmiUrl;
 import tw.com.mitake.request.BaseRequest;
-import tw.com.mitake.request.QmiUrl;
 import tw.com.mitake.response.BaseResponse;
 import tw.com.mitake.utils.JsonUtils;
 
@@ -29,6 +29,12 @@ public class QmiSender {
                 req = new Request.Builder().url(qmiUrl.getUrl() + "?token=" + Qmi.getToken()).post(requestBody).build();
 
                 LOG.debug("RequestBody: {}", jsonData);
+                LOG.debug("Request: {}", req.toString());
+
+                break;
+            case GET:
+                req = new Request.Builder().url(qmiUrl.getUrl() + "?token=" + Qmi.getToken()).get().build();
+
                 LOG.debug("Request: {}", req.toString());
 
                 break;

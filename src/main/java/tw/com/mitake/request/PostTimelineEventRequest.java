@@ -1,6 +1,7 @@
 package tw.com.mitake.request;
 
 import com.google.gson.annotations.SerializedName;
+import tw.com.mitake.constant.QmiUrl;
 
 public class PostTimelineEventRequest extends BaseRequest {
     @SerializedName("data")

@@ -1,13 +1,20 @@
 package tw.com.mitake.response;
 
+import com.google.gson.annotations.SerializedName;
+
 public class PostTimelineEventResponse extends BaseResponse {
-    private String eventId;
+    private PostTimelineEventResponseResponse response;
 
     public String getEventId() {
-        return eventId;
+        return response.data.eventId;
     }
 
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
+    public static class PostTimelineEventResponseResponse {
+        private PostTimelineEventResponseData data;
+
+        public static class PostTimelineEventResponseData {
+            @SerializedName("event_id")
+            private String eventId;
+        }
     }
 }
