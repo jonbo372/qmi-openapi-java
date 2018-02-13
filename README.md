@@ -10,7 +10,7 @@ Qmi OpenAPI for Java
 <dependency>
   <groupId>tw.com.mitake</groupId>
   <artifactId>qmi-openapi</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
 </dependency>
 ```
 
@@ -26,4 +26,12 @@ Qmi qmi = Qmi.init("token");
 
 ```java
 qmi.postToTimeline("Hello World");
+```
+
+## Private cloud or developing
+
+### Indicate baseUrl
+
+```java
+Qmi qmi = Qmi.init("token", "https://baseUrl.com");
 ```
