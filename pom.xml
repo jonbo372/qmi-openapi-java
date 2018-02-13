@@ -3,7 +3,7 @@
 
     <groupId>tw.com.mitake</groupId>
     <artifactId>qmi-openapi</artifactId>
-    <version>0.2.1</version>
+    <version>0.2.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>qmi-openapi</name>
@@ -28,7 +28,7 @@
         <connection>scm:git:git@github.com:mitaketw/qmi-openapi-java.git</connection>
         <developerConnection>scm:git:git@github.com:mitaketw/qmi-openapi-java.git</developerConnection>
         <url>scm:git:git@github.com:mitaketw/qmi-openapi-java.git</url>
-        <tag>v0.2.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
