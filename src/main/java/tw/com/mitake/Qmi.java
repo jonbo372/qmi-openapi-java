@@ -14,6 +14,9 @@ import java.util.Arrays;
 
 public class Qmi {
     private static final Logger LOG = LoggerFactory.getLogger(Qmi.class);
+    private static final String FORMAT_URL = "%s/v2/open/%%s";
+
+    public static String baseUrl;
 
     private static String token;
     private static boolean init;
@@ -24,6 +27,10 @@ public class Qmi {
     }
 
     public static Qmi init(String token) {
+        return init(token, "https://ap.qmi.emome.net");
+    }
+
+    public static Qmi init(String token, String baseUrl) {
         if (init) {
             return instance;
         }
@@ -37,6 +44,8 @@ public class Qmi {
         if (instance == null) {
             instance = new Qmi();
             sender = new QmiSender();
+
+            Qmi.baseUrl = String.format(FORMAT_URL, baseUrl);
             Qmi.token = token;
         }
 

@@ -11,8 +11,7 @@ import tw.com.mitake.utils.JsonUtils;
 import java.io.IOException;
 
 public class QmiSender {
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-
+    private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private static final Logger LOG = LoggerFactory.getLogger(QmiSender.class);
     private static final OkHttpClient CLIENT = new OkHttpClient();
 
